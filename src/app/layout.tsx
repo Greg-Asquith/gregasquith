@@ -1,4 +1,13 @@
+import { Doppio_One as FontSans } from "next/font/google";
+
 import './globals.css';
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+  weight: "400"
+});
 
 export const metadata = {
   title: 'gregasquith.com',
@@ -12,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="font-sans">{children}</body>
     </html>
   );
 }
