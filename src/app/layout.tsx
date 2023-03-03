@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Doppio_One as FontSans } from "next/font/google";
 
 import { cn } from "@/lib/utils";
@@ -9,6 +10,11 @@ import { ThemeProvider } from "@src/components/ui/ThemeProvider";
 import { Toaster } from "@src/components/ui/toaster"
 
 import "./globals.css";
+
+export const metadata: Metadata = {
+  title: 'Greg Asquith | Home',
+  description: 'Greg Asquith | Technical consulting and solution creation',
+};
 
 const fontSans = FontSans({
   subsets: ["latin"],
