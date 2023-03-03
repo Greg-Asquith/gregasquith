@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <main>
+    <div className="my-2">
       Welcome to gregasquith.com
-    </main>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 export default function About() {
   return (
-    <main>
+    <div className="my-2">
       About gregasquith.com
-    </main>
+    </div>
   );
 }

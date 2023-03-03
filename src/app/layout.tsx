@@ -1,27 +1,47 @@
 import { Doppio_One as FontSans } from "next/font/google";
 
-import './globals.css';
+import { cn } from "@/lib/utils";
+
+import { SiteFooter } from "@src/components/SiteFooter";
+import { SiteHeader } from "@src/components/SiteHeader";
+import { TailwindIndicator } from "@src/components/TailwindIndicator";
+import { ThemeProvider } from "@src/components/ui/ThemeProvider";
+import { Toaster } from "@src/components/ui/toaster"
+
+import "./globals.css";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
   weight: "400"
-});
+})
 
-export const metadata = {
-  title: 'gregasquith.com',
-  description: 'Greg Asquith | Technical consulting and solution creation',
+interface RootLayoutProps {
+  children: React.ReactNode
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body className="font-sans">{children}</body>
-    </html>
-  );
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={cn(
+            "min-h-screen bg-white font-sans text-slate-900 antialiased dark:bg-slate-900 dark:text-slate-50",
+            fontSans.variable
+          )}
+        >
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <div className="flex min-h-screen flex-col">
+              <SiteHeader />
+              <div className="container flex-1">{children}</div>
+              <SiteFooter />
+              <TailwindIndicator />
+            </div>
+          </ThemeProvider>
+          <Toaster />
+        </body>
+      </html>
+    </>
+  )
 }
