@@ -38,7 +38,7 @@ export const siteConfig: SiteConfig = {
   links: {
     twitter: "https://twitter.com/Greg_Asquith",
     github: "https://github.com/Greg-Asquith",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/gregasquith/",
     shadcnTwitter: "https://twitter.com/shadcn",
     shadcnGithub: "https://github.com/shadcn/ui"
   },
