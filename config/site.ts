@@ -27,6 +27,10 @@ export const siteConfig: SiteConfig = {
       href: "/about",
     },
     {
+      title: "Tools & Scripts",
+      href: "/tools-and-scripts",
+    },
+    {
       title: "Blog",
       href: "/blog",
     },
